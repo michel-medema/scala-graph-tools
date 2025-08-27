@@ -10,7 +10,7 @@ jobs:
       packages: write
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v5
       with:
         repository: twalgor/tw
     - name: Set up JDK 11
