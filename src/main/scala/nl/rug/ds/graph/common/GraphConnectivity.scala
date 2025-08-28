@@ -7,14 +7,6 @@ import GenericGraph.Weight
 import scala.annotation.tailrec
 
 object GraphConnectivity {
-  /*def vertexConnectivity( g: DiGraph[Int], s: Int, t: Int ): Int = {
-    if ( g.neighbours( s ).contains( t ) ) {
-      Int.MaxValue
-    } else {
-      new MaximumFlow( g ).maxFlow( s, t ).toInt
-    }
-  }*/
-
   // TODO: While finding the maximal clique requires exponential time in the worst case for general graphs, this method is terribly inefficient and only designed for extremely small graphs.
   def maximalCliques[V]( g: Graph[V] ): Set[Set[V]] = {
     @tailrec
