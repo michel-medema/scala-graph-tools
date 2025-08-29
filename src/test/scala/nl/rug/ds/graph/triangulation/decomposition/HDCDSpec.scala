@@ -3,9 +3,9 @@ package nl.rug.ds.graph.triangulation.decomposition
 import nl.rug.ds.common.UnitSpec
 import nl.rug.ds.graph.common.Graph
 
-class HDCSpec extends UnitSpec {
+class HDCDSpec extends UnitSpec {
   "Heuristic Decomposition with Community Structure" should "not decompose an empty graph" in {
-    val hdc: HDC = new HDC()
+    val hdc: HDCD = new HDCD()
 
     hdc.decompose( Graph.empty[Int] )._1 shouldEqual Set( Graph.empty[Int] )
   }
@@ -13,7 +13,7 @@ class HDCSpec extends UnitSpec {
   it should "not decompose a graph with a single community" in {
     val g: Graph[Int] = Graph.clique( Set( 1, 2, 3, 4, 5 ) )
 
-    val hdc: HDC = new HDC()
+    val hdc: HDCD = new HDCD()
 
     hdc.decompose( g )._1 shouldEqual Set( g )
   }
@@ -21,7 +21,7 @@ class HDCSpec extends UnitSpec {
   it should "use the smallest community in a graph with two communities that are fully connected" in {
     val g: Graph[Int] = (Graph.clique(Set(1, 2, 3, 4, 5)) ++ Graph.clique(Set(6, 7, 8, 9, 10, 11))) addEdges Set( 1 -> 6, 2 -> 7, 3 -> 8, 4 -> 9, 5 -> 10, 1 -> 11, 2 -> 11 )
 
-    val hdc: HDC = new HDC()
+    val hdc: HDCD = new HDCD()
 
     hdc.decompose( g )._1 shouldEqual Set( g )
   }
@@ -55,7 +55,7 @@ class HDCSpec extends UnitSpec {
       Set( 9 -> 11, 9 -> 12, 11 -> 13, 11 -> 14, 12 -> 13, 12 -> 14 )
     )
 
-    val hdc: HDC = new HDC()
+    val hdc: HDCD = new HDCD()
 
     hdc.decompose( g )._1 shouldEqual Set( g1, g2, g3 )
   }
@@ -73,7 +73,7 @@ class HDCSpec extends UnitSpec {
       Set( 2 -> 3, 2 -> 4, 3 -> 8, 4 -> 6, 4 -> 7, 6 -> 7, 4 -> 8, 4 -> 9, 6 -> 10, 7 -> 11,  8 -> 9, 8 -> 10, 8 -> 11, 9 -> 10, 9 -> 11, 10 -> 11 )
     )
 
-    val hdc: HDC = new HDC()
+    val hdc: HDCD = new HDCD()
 
     hdc.decompose( g )._1 shouldEqual Set( g1, g2, g3 )
   }
@@ -103,7 +103,7 @@ class HDCSpec extends UnitSpec {
       Set( 7 -> 8, 7 -> 9, 7 -> 10, 8 -> 10, 8 -> 11, 9 -> 10, 9 -> 11, 10 -> 11 )
     )
 
-    val hdc: HDC = new HDC()
+    val hdc: HDCD = new HDCD()
 
     hdc.decompose( g )._1 shouldEqual Set( g1, g2, g3 )
   }
@@ -122,7 +122,7 @@ class HDCSpec extends UnitSpec {
 
     val g4: Graph[Int] = g.subgraph( Set(1, 2, 3, 4, 5, 8) )
 
-    val hdc: HDC = new HDC()
+    val hdc: HDCD = new HDCD()
 
     hdc.decompose( g )._1 shouldEqual Set( g1, g2, g3, g4 )
   }

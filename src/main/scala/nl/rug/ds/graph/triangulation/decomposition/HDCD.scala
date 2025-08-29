@@ -8,7 +8,7 @@ import nl.rug.ds.graph.communities.Louvain
 import scala.annotation.tailrec
 
 // Heuristic Decomposition using Community Structure.
-class HDC {
+class HDCD {
   /**
    * Return the subgraphs that are obtained when the vertices of the given separator
    * are removed. The vertices of the separator are turned into a clique to ensure
