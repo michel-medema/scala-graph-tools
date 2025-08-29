@@ -35,3 +35,5 @@ A generator to create random graphs and a generator to create graphs with vertex
 Data structures to store triangulated graphs and algorithms to produce triangulated graphs. Currently, two common heuristic triangulation algorithms are provided: min-fill and min-degree. This package also contains an implementation of the Heuristic Decomposition with Community Structure algorithm, which decomposes a graph using the boundaries of the communities as likely safe separators. This algorithm is described in the paper 
 
 > M. Medema and A. Lazovik, ‘A safeness condition for minimal separators based on vertex connectivity’, Discrete Mathematics, vol. 348, no. 9, p. 114524, Sep. 2025, doi: 10.1016/j.disc.2025.114524.
+
+Licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
