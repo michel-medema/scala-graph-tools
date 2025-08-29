@@ -4,7 +4,7 @@ This repository contains a small collection of graph algorithms and data structu
 
 ## `nl.rug.ds.common`
 
-Helper methods to deal with common tasks such as removing extensions from filenames and writing to files.
+Several simple helper methods to deal with common tasks such as removing extensions from filenames and writing to files.
 
 ## `nl.rug.ds.graph.common`
 
