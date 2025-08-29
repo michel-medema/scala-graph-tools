@@ -29,6 +29,8 @@ jobs:
         
     - name: Run tests
       run: sbt test
+      env:
+        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
       
     - name: Upload dependency graph
       uses: scalacenter/sbt-dependency-submission@v3
